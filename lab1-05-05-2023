@@ -11,7 +11,7 @@ def updateHypothesis(x,h):
 if __name__ == "__main__":
     data = []
     h = []
-        #save thois file csv(comma delimanated)
+        #save this file csv(comma delimanated)
     with open("Book2.csv") as file:
         reader = csv.reader(file)
         print("Data:")
