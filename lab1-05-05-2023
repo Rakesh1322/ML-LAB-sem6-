@@ -1,0 +1,29 @@
+import csv
+
+def updateHypothesis(x,h):
+    if h == []:
+        return x
+    for i in range(0,len(h)):
+        if x[i].upper() != h[i].upper():
+            h[i] = "?"
+    return h
+
+if __name__ == "__main__":
+    data = []
+    h = []
+        #save thois file csv(comma delimanated)
+    with open("Book2.csv") as file:
+        reader = csv.reader(file)
+        print("Data:")
+        for row in reader:
+            data.append(row)
+            print(row)
+
+    if data:
+        for row in data:
+            if row[-1].upper() == "YES":
+                row.pop()
+                h = updateHypothesis(row,h)
+
+    print("\nHypothesis:",h)
+
